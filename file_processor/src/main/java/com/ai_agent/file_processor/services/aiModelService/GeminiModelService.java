@@ -25,7 +25,7 @@ public class GeminiModelService implements LlmModelService{
     }
 
     String url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=";
-    String apiKey = "AIzaSyDYrBMBCBodVum7NZKRKo-XP9URv84mGZE" ;
+    String apiKey = "cannot expose the api key in public repository" ;
 
     @Override
     public String getSummary(String chunk) throws JsonProcessingException {
