@@ -6,11 +6,20 @@ import com.ai_agent.file_processor.models.fileModel.FileType;
 public class FileExtractorFactory {
 
     public FileExtractor getFileExtractor(FileType fileType) throws UnsupportedFileTypeException {
-        switch (fileType) {
-            case PDF -> new PdfFileExtractor();
-            case DOCX -> new DocxFileExtractor();
-            //default -> throw new UnsupportedFileTypeException("this file format not supported ...");
+        if (fileType.equals(FileType.TXT)) {
+            return new TxtFileExtractor();
         }
-        throw new UnsupportedFileTypeException("Unsupported file type: " + fileType);
+
+        else if (fileType.equals(FileType.PDF)) {
+            return new DocxFileExtractor();
+        }
+
+        else if (fileType.equals(FileType.DOCX)){
+            return new DocxFileExtractor();
+        }
+
+        else {
+            throw new UnsupportedFileTypeException("Unsupported file type: " + fileType);
+        }
     }
 }
